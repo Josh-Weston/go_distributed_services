@@ -4,7 +4,7 @@ package log.v1;
 
 option go_package = "github.com/josh-weston/api/log_v1";
 
-message Record{
+message Record {
     bytes value = 1;
     uint64 offset = 2;
 }

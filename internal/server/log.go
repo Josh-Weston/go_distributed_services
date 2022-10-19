@@ -5,6 +5,9 @@ import (
 	"sync"
 )
 
+// This is an append-only, in-memory log, setup as a slice
+// The Record.Offset field is simply the index of the record in the slice
+
 type Record struct {
 	Value  []byte `json:"value"` // encoding/json will encode []byte as base64
 	Offset uint64 `json:"offset"`

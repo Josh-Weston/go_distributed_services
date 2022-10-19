@@ -46,7 +46,7 @@ func (s *store) Append(p []byte) (n uint64, pos uint64, err error) {
 	if err != nil {
 		return 0, 0, err
 	}
-	w += LEN_WIDTH
+	w += LEN_WIDTH // always use 8 bytes to denote the length of the message
 	s.size += uint64(w)
 	return uint64(w), pos, nil
 }
