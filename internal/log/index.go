@@ -81,10 +81,6 @@ func (i *index) Close() error {
 	if err := i.mmap.Sync(gommap.MS_SYNC); err != nil {
 		return err
 	}
-	err := i.mmap.UnsafeUnmap() // this is mentioned in the books errata by another user
-	if err != nil {
-		return err
-	}
 	if err := i.file.Sync(); err != nil {
 		return err
 	}
